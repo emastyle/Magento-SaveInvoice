@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <sales>
+            <groups>
+                <saveinvoice translate="label">
+                    <label>Save Pdf Invoice to file system</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enabling saving invoice</comment>
+                        </enabled>
+                        <export_folder translate="label">
+                            <label>PDF server folder</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Folder where invoices are saved</comment>
+                        </export_folder>
+                    </fields>
+                </saveinvoice>
+            </groups>
+        </sales>
+    </sections>
+</config>

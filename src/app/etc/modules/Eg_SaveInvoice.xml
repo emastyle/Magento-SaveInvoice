@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Eg_SaveInvoice>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends></depends>
+        </Eg_SaveInvoice>
+    </modules>
+</config>
