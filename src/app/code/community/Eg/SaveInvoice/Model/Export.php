@@ -1,47 +1,23 @@
 <?php
 
 /**
- * Magento EG_SaveInvoice_Model_Export
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Open Software License (OSL 3.0)
- * that is bundled with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/osl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
- *
- * */
+ * Class Eg_SaveInvoice_Model_Export
+ */
 class Eg_SaveInvoice_Model_Export extends Mage_Core_Model_Abstract
 {
-    const SAVE_INVOICE_ENABLED              = 'sales/saveinvoice/enabled';
-    const PDF_EXPORT_FOLDER                 = 'sales/saveinvoice/export_folder';
+    const XML_PATH_SAVE_INVOICE_ENABLED              = 'sales/saveinvoice/enabled';
+    const XML_PATH_PDF_EXPORT_FOLDER                 = 'sales/saveinvoice/export_folder';
 
-    const INVOICE_EXTENSION                 = '.pdf';
-
-    //abstract public function saveInvoice(Varien_Event_Observer $observer);
+    const INVOICE_EXTENSION                          = '.pdf';
 
     protected function getPdfExportFolder()
     {
-        return $this->checkPath(Mage::getStoreConfig(self::PDF_EXPORT_FOLDER)) . DS;
-    }
-
-    protected function getInvoiceLogFolder()
-    {
-        return Mage::getStoreConfig(self::INVOICE_LOG_FOLDER);
+        return $this->checkPath(Mage::getStoreConfig(self::XML_PATH_PDF_EXPORT_FOLDER)) . DS;
     }
 
     protected function isSavePdfInvoiceEnabled()
     {
-        return self::SAVE_INVOICE_ENABLED;
+        return Mage::getStoreConfig(self::XML_PATH_SAVE_INVOICE_ENABLEDSAVE_INVOICE_ENABLED);
     }
 
     private function getIoAdapter()
@@ -70,6 +46,9 @@ class Eg_SaveInvoice_Model_Export extends Mage_Core_Model_Abstract
     }
 
     public function _saveInvoicePdf($_invoice) {
+
+        if (!$this->isSavePdfInvoiceEnabled())
+            return;
 
         $orderId = $_invoice->getOrder()->getId();
         //$LogInvoiceData = $this->prepareInvoiceData($_invoice, $order);

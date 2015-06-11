@@ -1,10 +1,8 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: wme
- * Date: 02/03/15
- * Time: 9.07
- */ 
+ * Class Eg_SaveInvoice_Helper_Data
+ */
 class Eg_SaveInvoice_Helper_Data extends Mage_Core_Helper_Abstract
 {
 

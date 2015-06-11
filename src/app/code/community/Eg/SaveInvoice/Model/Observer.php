@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class Eg_SaveInvoice_Model_Observer
+ */
 class Eg_SaveInvoice_Model_Observer
 {
     public function saveInvoice(Varien_Event_Observer $observer)
