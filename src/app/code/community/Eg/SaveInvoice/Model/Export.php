@@ -17,7 +17,7 @@ class Eg_SaveInvoice_Model_Export extends Mage_Core_Model_Abstract
 
     protected function isSavePdfInvoiceEnabled()
     {
-        return Mage::getStoreConfig(self::XML_PATH_SAVE_INVOICE_ENABLEDSAVE_INVOICE_ENABLED);
+        return Mage::getStoreConfig(self::XML_PATH_SAVE_INVOICE_ENABLED);
     }
 
     private function getIoAdapter()
