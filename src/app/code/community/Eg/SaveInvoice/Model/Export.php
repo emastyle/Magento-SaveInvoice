@@ -12,7 +12,7 @@ class Eg_SaveInvoice_Model_Export extends Mage_Core_Model_Abstract
 
     protected function getPdfExportFolder()
     {
-        return $this->checkPath(Mage::getStoreConfig(self::XML_PATH_PDF_EXPORT_FOLDER)) . DS;
+        return $this->checkPath(Mage::getStoreConfig(self::XML_PATH_PDF_EXPORT_FOLDER)) . DIRECTORY_SEPARATOR;
     }
 
     protected function isSavePdfInvoiceEnabled()
