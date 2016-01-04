@@ -22,6 +22,7 @@ class Mage_Shell_Runtime extends Mage_Shell_Abstract
         if ($this->getArg('increment_id') && $this->getArg('increment_id') != '' && $this->getArg('increment_id') != ' ') {
 
             $invoiceIncrementId = $this->getArg('increment_id');
+            Mage::helper('eg_saveinvoice')->_log('Invoice saving by shell script was called for invoice increment_id ' . $invoiceIncrementId);
             $saveInvoiceModel = Mage::getModel('eg_saveinvoice/export');
 
             $_invoice = Mage::getModel('sales/order_invoice')->loadByIncrementId($invoiceIncrementId);
