@@ -12,7 +12,7 @@ class Eg_SaveInvoice_Model_Observer
         $_event = $observer->getEvent();
         $_invoice = $_event->getInvoice();
 
-        Mage::log('Eg_SaveInvoice_Model_Observer :: calling');
+        Mage::helper('eg_saveinvoice')->_log('Eg_SaveInvoice_Model_Observer :: called');
 
         $_export->_saveInvoicePdf($_invoice);
     }

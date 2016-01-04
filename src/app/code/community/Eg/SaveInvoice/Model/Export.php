@@ -12,7 +12,7 @@ class Eg_SaveInvoice_Model_Export extends Mage_Core_Model_Abstract
 
     protected function getPdfExportFolder()
     {
-        return $this->checkPath(Mage::getStoreConfig(self::XML_PATH_PDF_EXPORT_FOLDER)) . DIRECTORY_SEPARATOR;
+        return $this->checkPath(Mage::getStoreConfig(self::XML_PATH_PDF_EXPORT_FOLDER)) . DS;
     }
 
     protected function isSavePdfInvoiceEnabled()
@@ -35,8 +35,7 @@ class Eg_SaveInvoice_Model_Export extends Mage_Core_Model_Abstract
             $ioAdapter->checkAndCreateFolder($path);
         }
         catch (Exception $e) {
-            //Mage::exception($e->getMessage());
-            Mage::log("*** SaveInvoice ERROR: " . $e->getMessage());
+            Mage::helper('eg_saveinvoice')->_log("*** SaveInvoice ERROR: " . $e->getMessage());
         }
         return $pathToCheck;
     }
@@ -51,7 +50,6 @@ class Eg_SaveInvoice_Model_Export extends Mage_Core_Model_Abstract
             return;
 
         $orderId = $_invoice->getOrder()->getId();
-        //$LogInvoiceData = $this->prepareInvoiceData($_invoice, $order);
 
         $orderModel = Mage::getModel('sales/order')->load($orderId);
         $invoices = $orderModel->getInvoiceCollection();
@@ -63,10 +61,8 @@ class Eg_SaveInvoice_Model_Export extends Mage_Core_Model_Abstract
             $pdf = Mage::getModel('sales/order_pdf_invoice')->getPdf($invoicesSet);
             $pdf->save($this->getPdfExportFolder() . $this->createInvoiceFileName($_invoice->getIncrementId()), true);
 
-           // $this->logInvoice($LogInvoiceData);
-
         } catch (Exception $ex) {
-            Mage::log("saveInvoice:" . $ex->getMessage());
+            Mage::helper('eg_saveinvoice')->_log("saveInvoice:" . $ex->getMessage());
         }
     }
 

@@ -32,4 +32,8 @@ class Eg_SaveInvoice_Helper_Data extends Mage_Core_Helper_Abstract
 
     }
 
+    public function _log($msg) {
+        Mage::log($msg, null, 'Eg_SaveInvoice.log', true);
+    }
+
 }

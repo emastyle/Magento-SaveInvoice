@@ -21,13 +21,13 @@
                             <comment>Enabling saving invoice</comment>
                         </enabled>
                         <export_folder translate="label">
-                            <label>PDF server folder</label>
+                            <label>PDF saving folder</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>3</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                            <comment>Folder where invoices are saved</comment>
+                            <comment>Folder where invoices will be saved</comment>
                         </export_folder>
                     </fields>
                 </saveinvoice>

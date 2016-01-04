@@ -20,6 +20,7 @@ For composer see https://github.com/Cotya/magento-composer-installer
 Once installed, clean your Magento cache and compilation (if active) and go to System > Configuration > Sales.
 In the configuration groups you should see configuration option for enabling the module and choose path where save pdf invoices.
 
+A manual invoice save procedure is provided through a shell script.
 
 Contribution
 ------------

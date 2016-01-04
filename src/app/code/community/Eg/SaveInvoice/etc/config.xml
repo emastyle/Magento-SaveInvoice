@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Eg_SaveInvoice>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </Eg_SaveInvoice>
     </modules>
     <global>
@@ -31,7 +31,7 @@
         <sales>
             <saveinvoice>
                 <enabled>0</enabled>
-                <export_folder>var/importexport</export_folder>
+                <export_folder>var/importexport/invoices</export_folder>
             </saveinvoice>
         </sales>
     </default>
