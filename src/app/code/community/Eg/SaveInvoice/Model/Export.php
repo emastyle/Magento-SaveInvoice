@@ -61,7 +61,7 @@ class Eg_SaveInvoice_Model_Export extends Mage_Core_Model_Abstract
             $pdf = Mage::getModel('sales/order_pdf_invoice')->getPdf($invoicesSet);
             $InvoiceIncrementId = $_invoice->getIncrementId();
             $InvoiceFileName = $this->createInvoiceFileName($InvoiceIncrementId);
-            $pdf->save($this->getPdfExportFolder() . $InvoiceFileName, true);
+            $pdf->save($this->getPdfExportFolder() . $InvoiceFileName);
             Mage::helper('eg_saveinvoice')->_log( 'PDF invoice ' . $InvoiceFileName . ' saved on ' . $this->getPdfExportFolder());
 
         } catch (Exception $ex) {
