@@ -6,11 +6,10 @@ This magento extension enables saving PDF invoices on filesystem.
 Compatibility
 --------------
 
-Magento >= 1.8
+Magento >= 1.5
 
 Magento Connect Extension Page
 -------
-
 https://www.magentocommerce.com/magento-connect/catalog/product/view/id/31348/
 
 
