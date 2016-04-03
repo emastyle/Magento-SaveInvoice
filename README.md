@@ -8,11 +8,16 @@ Compatibility
 
 Magento >= 1.8
 
+Magento Connect Extension Page
+-------
+
+https://www.magentocommerce.com/magento-connect/catalog/product/view/id/31348/
+
 
 Installation
 ------------
 
-This extension can be installed through Modman or via composer.
+This extension can also be installed through Modman or via composer.
 
 For further information about Modman see https://github.com/colinmollenhour/modman/wiki/Tutorial
 For composer see https://github.com/Cotya/magento-composer-installer
